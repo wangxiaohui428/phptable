@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var btn=document.getElementsByTagName("input")[0];
+			var div=document.getElementsByTagName("div")[0];
+			btn.onclick=function(){	
+				var newobj=new XMLHttpRequest();
+				newobj.onload=function(){
+					var content=newobj.responseXML;
+					var str="<table><th>姓名</th><th>年龄</th><th>性别</th>";
+						var trs=content.getElementsByTagName("stu");
+						for(var i=0;i<trs.length;i++){
+							str+="<tr>";
+							str+="<td>"+trs[i].getElementsByTagName("name")[0].innerHTML+"</td>";
+							str+="<td>"+trs[i].getElementsByTagName("age")[0].innerHTML+"</td>";
+							str+="<td>"+trs[i].getElementsByTagName("sex")[0].innerHTML+"</td>";
+							str+="</tr>";
+						}
+					str+="</table>";
+					div.innerHTML=str;
+//					document.body.innerHTML=str;
+				}
+				newobj.open("get","1.xml");
+				newobj.send();
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax1.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+	window.onload=function(){
+		ajax({
+				url:"1.php",
+				type:"post",
+				dataType:"text",
+				data:{name:"zhangsan"},
+				success:function(e){
+					console.log(e);
+				},
+				error:function(e){
+					console.log(e);
+				}
+		})
+	}
+			
+		</script>
+</html>

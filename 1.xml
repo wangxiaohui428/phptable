@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bigbox>
+	<stu>
+		<name>请问</name>
+		<sex>男</sex>
+		<age>12</age>
+	</stu>
+	<stu>
+		<name>二</name>
+		<sex>女</sex>
+		<age>23</age>
+	</stu>
+	<stu>
+		<name>都是</name>
+		<sex>男</sex>
+		<age>12</age>
+	</stu>
+</bigbox>
